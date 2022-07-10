@@ -246,8 +246,8 @@ BEGIN
 
   #Phân trang
   -- Nếu như không có điều kiện query truyền vào thì gán 1=1 (điều kiện này luôn đúng - đây là 1 cách để set điều kiện query mặc định)
-  IF IFNULL($Where, '') <> '' THEN
-    SET $Where = '1=1';
+  IF IFNULL($Where, '') = '' THEN
+    SET $Where = 'WHERE 1=1';
   END IF;
 
   IF IFNULL($Sort, '') = '' THEN
